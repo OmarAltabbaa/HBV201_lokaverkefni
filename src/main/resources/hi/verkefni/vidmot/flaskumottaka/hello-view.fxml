@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="15" style="-fx-padding: 20px;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.verkefni.vidmot.flaskumottaka.FloskurController">
+
+    <Label styleClass="title" text="Flöskumóttaka" />
+
+    <GridPane alignment="CENTER" hgap="10" prefHeight="190.0" prefWidth="600.0" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="LEFT" minWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" prefWidth="138.6" />
+            <ColumnConstraints halignment="CENTER" prefWidth="112.6" />
+            <ColumnConstraints halignment="CENTER" prefWidth="85.0" />
+            <ColumnConstraints halignment="CENTER" prefWidth="85.0" />
+        </columnConstraints>
+
+        <!-- Dósir -->
+        <Label text="Dósir" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="dosirTextField" onAction="#onDosirEntered" promptText="Sláðu inn tölu" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label fx:id="totalDosirLabel" styleClass="box-label" text="0" textFill="#141414" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+        <!-- Flöskur -->
+        <Label text="Flöskur" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="floskurTextField" onAction="#onFloskurEntered" promptText="Sláðu inn tölu" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label fx:id="totalFloskurLabel" styleClass="box-label" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+        <!-- Samtals -->
+        <Label text="Samtals" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label fx:id="samtalsVirdiLabel" styleClass="box-label" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Label fx:id="usdLabel"  styleClass="box-label" text="0.00 USD" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        <Label fx:id="eurLabel"  styleClass="box-label" text="0.00 EUR" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+
+        <!-- Samtals Heildar -->
+        <Label text="Samtals Heildar" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label fx:id="totalOverallLabel" styleClass="box-label" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Label fx:id="usdTotalLabel" styleClass="box-label" text="0.00 USD" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        <Label fx:id="eurTotalLabel" styleClass="box-label" text="0.00 EUR" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+        <Label fx:id="treesSavedLabel" styleClass="box-label" text="You have saved 0 trees 🌲" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="5" />
+
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints maxHeight="28.0" minHeight="28.0" prefHeight="28.0" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="25.6" minHeight="25.6" prefHeight="25.6" />
+        </rowConstraints>
+
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox alignment="CENTER" spacing="15">
+        <Button onAction="#onHreinsa" styleClass="button" text="Hreinsa" />
+        <Button onAction="#onGreida" styleClass="button" text="Greiða" />
+    </HBox>
+
+    <Button onAction="#onDonatetClicked" style="-fx-background-color: #FF9900; -fx-text-fill: white; -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-font-weight: bold; margin-top:10px;" styleClass="button" text="Gefa" />
+
+</VBox>
